@@ -16,7 +16,7 @@ export default function TaskDetails(props) {
     }, [props.id]);
 
     const loadTask = async () => {
-        const url = 'http://localhost:3001/tasks/' + props.id
+        const url = 'http://mozgis.me:3001/tasks/' + props.id
         try {
             const response = await Axios.get(url);
             setTask({ loading: false, data: response.data });
@@ -29,7 +29,7 @@ export default function TaskDetails(props) {
 
     const deleteComment = async (commentId) => {
         const confirmed = window.confirm('are you sure?');
-        const url = `http://localhost:3001/comments/${commentId}/${props.id}`;
+        const url = `http://mozgis.me:3001/comments/${commentId}/${props.id}`;
         if (confirmed) {
             try {
                 await Axios.delete(url);
@@ -42,7 +42,7 @@ export default function TaskDetails(props) {
 
     const addComment = async () => {
         try {
-            const url = `http://localhost:3001/comments`;
+            const url = `http://mozgis.me:3001/comments`;
             await Axios.post(url, {
                 taskId: props.id,
                 comment: newCommentText
@@ -58,7 +58,7 @@ export default function TaskDetails(props) {
         const confirmed = window.confirm('are you sure?');
         if (confirmed) {
             try {   
-                const url = `http://localhost:3001/tasks/${props.id}`;
+                const url = `http://mozgis.me:3001/tasks/${props.id}`;
                 await Axios.delete(url);
                 props.refreshTasks();
             } catch(e) {

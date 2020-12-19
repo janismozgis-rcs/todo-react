@@ -7,7 +7,7 @@ export default function Todos(props) {
         data: [],
         loading: true
     });
-    const url = 'http://localhost:3001/tasks'
+    const url = 'http://mozgis.me:3001/tasks'
 
     const loadTodos = async () => {
         try {

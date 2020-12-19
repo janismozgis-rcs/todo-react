@@ -12,7 +12,7 @@ export default function Todo(props) {
         const localIsCompleted = !isCompleted;
         setIscompleted(localIsCompleted)
         try {
-            const url = `http://localhost:3001/tasks/complete/${id}`;
+            const url = `http://mozgis.me:3001/tasks/complete/${id}`;
             await Axios.patch(url, {
                 isCompleted: localIsCompleted,
             });

@@ -6,7 +6,7 @@ export default function AddNewTodo(props) {
     const [errors, setErrors] = useState([]);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const url = 'http://localhost:3001/tasks'
+    const url = 'http://mozgis.me:3001/tasks'
 
     const saveTask = async () => {
         setSaving(true);
